@@ -1,0 +1,14 @@
+<!doctype html>
+
+<html>
+  <head>
+    {% load staticfiles %}
+    <meta charset="utf-8" />
+    <link rel="styleSheet" type="text/css" href="{% static 'base.css' %}" />
+  </head>
+  <body>
+    {{STATIC_URL}}
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

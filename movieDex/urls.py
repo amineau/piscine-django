@@ -1,4 +1,4 @@
-"""r00 URL Configuration
+"""d04 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -13,15 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls import url
+from .views import index, detail
 
 urlpatterns = [
-    url(r'^$', include('titleScreen.urls')),
-    url(r'^worldmap/', include('worldMap.urls')),
-    url(r'^battle/', include('battle.urls')),
-    url(r'^moviedex/', include('movieDex.urls')),
-    url(r'^options/', include('options.urls')),
+    url(r'^$', index),
+    url(r'^(?P<moviemon_id>[0-9]+)/', detail),
 ]
-
-urlpatterns += staticfiles_urlpatterns()
