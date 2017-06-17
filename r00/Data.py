@@ -50,8 +50,9 @@ class Data:
 
 def main():
     # initial setup
-    d = Data().load_default_settings()
+    d = Data()
     d.load()
+    print(d)
 
     # d.save()
 
