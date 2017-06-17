@@ -5,6 +5,8 @@
     {% load staticfiles %}
     <meta charset="utf-8" />
     <link rel="styleSheet" type="text/css" href="{% static 'base.css' %}" />
+    {% block style %}
+    {% endblock %}
   </head>
   <body>
     {{STATIC_URL}}

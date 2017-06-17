@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 
+{% load staticfiles %}
+{% block style %}
+  <link rel="styleSheet" type="text/css" href="{% static 'movieDex/style.css' %}" />
+{% endblock %}
+
 {% block content %}
   <p>
     movieDex with {{moviemon_id}}
