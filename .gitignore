@@ -4,3 +4,5 @@ migrations
 *.sqlite*
 *.log
 .idea
+
+save.p
