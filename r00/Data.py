@@ -68,7 +68,7 @@ class Data:
             for file in os.listdir('saved_game'):
                 if fnmatch.fnmatch(file, 'slot%s*'%(slot)):
                     try:
-                        shutil.copyfile(os.path.join('saved_game', filename), "save.p")
+                        shutil.copyfile(os.path.join('saved_game', file), "save.p")
                         return True
                     except Exception as e:
                         print(e)

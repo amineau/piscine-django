@@ -6,7 +6,11 @@
 {% endblock %}
 
 {% block A %}
-  <a class="fill-div" href="/options/save_game?slot={{slot_current}}&load={{slot_current}}"></a>
+  {% if ready %}
+    <a class="fill-div" href="/worldmap"></a>
+  {% else %}
+    <a class="fill-div" href="/options/load_game?slot={{slot_current}}&load={{slot_current}}"></a>
+  {% endif %}
 {% endblock %}
 
 {% block B %}
@@ -14,11 +18,11 @@
 {% endblock %}
 
 {% block up %}
-  <a class="fill-div" href="/options/save_game?slot={{slot_up}}"></a>
+  <a class="fill-div" href="/options/load_game?slot={{slot_up}}"></a>
 {% endblock %}
 
 {% block down %}
-  <a class="fill-div" href="/options/save_game?slot={{slot_down}}"></a>
+  <a class="fill-div" href="/options/load_game?slot={{slot_down}}"></a>
 {% endblock %}
 
 
@@ -34,7 +38,7 @@
       {% endfor %}
     </ul>
     <ol>
-      <li>Load</li>
+      <li>{% if ready %}Start game{% else %}Load{% endif %}</li>
       <li>Cancel</li>
     </ol>
   </div>
