@@ -88,3 +88,13 @@ a.fill-div {
   left: 1644px;
   top: 520px;
 }
+
+/* LIST UL-OL */
+
+ol li {
+  list-style-type: upper-latin;
+}
+
+ul li {
+  list-style-type: none;
+}

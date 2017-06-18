@@ -5,8 +5,24 @@
   <link rel="styleSheet" type="text/css" href="{% static 'options/style.css' %}" />
 {% endblock %}
 
+{% block start %}
+  <a class="fill-div" href="/worldmap"></a>
+{% endblock %}
+
+{% block A %}
+  <a class="fill-div" href="/options/save_game"></a>
+{% endblock %}
+
+{% block B %}
+  <a class="fill-div" href="/"></a>
+{% endblock %}
+
 {% block content %}
-  <p>
-    options
-  </p>
+  <div>
+    Options
+    <ol>
+      <li>Save</li>
+      <li>Quit</li>
+    </ol>
+  </div>
 {% endblock %}
