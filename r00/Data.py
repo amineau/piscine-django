@@ -35,8 +35,10 @@ class Data:
         self.settings['player_position'] = settings.BEGIN
         # from the list of movies in the settings, load the movies in settings.movie_mons
         movie_list = settings.MOVIES
-        for movie in movie_list:
-            self.settings[movie] = self.get_full_movie(movie)
+        for k, v in movie_list.items():
+            self.settings['movie_mons'][v] = self.get_full_movie(v)
+            self.settings['movie_mons'][v]['id'] = k
+        print(self.settings)
         return self.save()
 
     def save(self):
