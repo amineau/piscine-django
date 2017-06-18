@@ -5,4 +5,5 @@ migrations
 *.log
 .idea
 
+saved_game
 save.p

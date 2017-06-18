@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.conf import settings
 from r00.Data import Data
 
 # Create your views here.
