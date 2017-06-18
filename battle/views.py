@@ -9,7 +9,7 @@ def index(request, moviemon_id):
     rate = process_success_rate(data, movie)
 
     if not request.GET.get("attack",False):
-        return render(request, 'battle/index.html', {'Movie': movie,'strenght':data.get_strength(),'balls':data.get_movieBalls_count(),'rate':rate, 'info':"Try to catch it !"})
+        return render(request, 'battle/index.html', {'Movie': movie,'strenght':data.get_strength(),'balls':data.get_movieBalls_count(),'rate':rate, 'info':"{} Appeared ! Try to catch it !".format(movie['name'])})
     if data.get_movieBalls_count() > 0:
         data.set_movieBall(-1)
     else:
@@ -25,11 +25,7 @@ def index(request, moviemon_id):
         msg = "You missed !"
     return render(request, 'battle/index.html', {'Movie': movie,'strenght':data.get_strength(),'balls':data.get_movieBalls_count(),'rate':rate, 'info':msg})
     
-    
-        
-        
-    
-    
+     
 
 def process_success_rate(data, movie):
     bo = movie['box_office'] / 2
