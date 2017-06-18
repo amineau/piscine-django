@@ -83,6 +83,14 @@ class Data:
             raise Exception("invalid move command")
         self.save()
 
+    def add_movie_to_movie_dex(self, name):
+        self.settings['movie_dex'].append(name)
+        self.save()
+
+    def add_movie_to_movie_dex_by_id(self, movie_id):
+        self.settings['movie_dex'].append(self.settings['movie_mon'][settings.MOVIES[movie_id]]['name'])
+        self.save()
+
     # change this method for scrapping
     @staticmethod
     def get_full_movie(movie):
