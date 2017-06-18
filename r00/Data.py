@@ -63,6 +63,13 @@ class Data:
         except Exception as e:
             print(e)
 
+    def read_save(self):
+        result = {}
+        if os.path.exists('saved_game'):
+            for file in os.listdir('saved_game'):
+                infos = file[4:-4].split('_')
+                result[infos[0]] = "%s / %s"%(infos[1], infos[2])
+        return result
 
     def dump(self):
         return self.settings
