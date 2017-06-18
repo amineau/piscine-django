@@ -53,6 +53,8 @@ class Data:
         for i in self.settings['movie_mons']:
             coord = random.choice(play_grid.items())
             play_grid[(coord[1]['x'], coord[1]['y'])]['movie'] = i
+            coord = random.choice(play_grid.items())
+            play_grid[(coord[1]['x'], coord[1]['y'])]['movieball'] = True
         self.settings['max_score'] = len(settings.MOVIES)
         self.settings['play_grid'] = play_grid
         return self.save()
@@ -159,6 +161,14 @@ class Data:
             return t
         except KeyError:
             return None
+
+    def is_filled_by_pokeball(self, req):
+        try:
+            if self.settings['play_grid'][(req['x'], req['y'])]['movieball']:
+                return True
+            return False
+        except KeyError:
+            return False
 
     def remove_from_moviemon(self, key):
         grid = self.settings['play_grid']
