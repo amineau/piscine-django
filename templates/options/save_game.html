@@ -5,16 +5,12 @@
   <link rel="styleSheet" type="text/css" href="{% static 'options/style.css' %}" />
 {% endblock %}
 
-{% block start %}
-  <a class="fill-div" href="/worldmap"></a>
-{% endblock %}
-
 {% block A %}
-  <a class="fill-div" href="/options/save_game"></a>
+  <a class="fill-div" href="/options/save_game?slot={{slot_current}}&save={{slot_current}}"></a>
 {% endblock %}
 
 {% block B %}
-  <a class="fill-div" href="/"></a>
+  <a class="fill-div" href="/options"></a>
 {% endblock %}
 
 {% block up %}
@@ -29,11 +25,17 @@
 
 {% block content %}
   <div>
-    Choisir un slot
+    <h2>Sauvegarder une partie</h2>
     <ul>
-      <li>{% if slot_current == 0 %}->{% endif %} Slot A : {{slot_list.A}}</li>
-      <li>{% if slot_current == 1 %}->{% endif %} Slot B : {{slot_list.B}}</li>
-      <li>{% if slot_current == 2 %}->{% endif %} Slot C : {{slot_list.C}}</li>
+      {% for slot, score in saved.items %}
+        <li>
+          {% if slot_current == slot %}->{% endif %} Slot {{slot|upper}} : {{score}}
+        </li>
+      {% endfor %}
     </ul>
+    <ol>
+      <li>Save</li>
+      <li>Cancel</li>
+    </ol>
   </div>
 {% endblock %}

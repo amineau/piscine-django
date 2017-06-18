@@ -1,5 +1,8 @@
 import pickle
 import random
+import os
+import shutil
+import fnmatch
 
 from django.conf import settings
 
@@ -45,6 +48,43 @@ class Data:
         pickle.dump(self.settings, open("save.p", "wb"))
         return self.settings
 
+    def save_slot(self, slot):
+        try:
+            if not os.path.exists('saved_game'):
+                os.mkdir('saved_game')
+            else:
+                for file in os.listdir('saved_game'):
+                    if fnmatch.fnmatch(file, 'slot%s*'%(slot)):
+                        os.remove(os.path.join('saved_game', file))
+        except Exception as e:
+            print(e)
+            return
+        filename = "slot%s_%d_%d.mmg"%(slot, self.get_score(), self.get_max_score())
+        try:
+            shutil.copyfile("save.p", os.path.join('saved_game', filename))
+        except Exception as e:
+            print(e)
+
+    def load_slot(self, slot):
+        if os.path.exists('saved_game'):
+            for file in os.listdir('saved_game'):
+                if fnmatch.fnmatch(file, 'slot%s*'%(slot)):
+                    try:
+                        shutil.copyfile(os.path.join('saved_game', file), "save.p")
+                        return True
+                    except Exception as e:
+                        print(e)
+        return False
+
+
+    def read_save(self):
+        result = {}
+        if os.path.exists('saved_game'):
+            for file in os.listdir('saved_game'):
+                infos = file[4:-4].split('_')
+                result[infos[0]] = "%s / %s"%(infos[1], infos[2])
+        return result
+
     def dump(self):
         return self.settings
 
@@ -58,6 +98,12 @@ class Data:
 
     def get_movie(self, key):
         return self.settings['movie_mons'][key]
+
+    def get_score(self):
+        return len(self.settings['movie_dex'])
+
+    def get_max_score(self):
+        return len(self.settings['movie_mons'])
 
     def set_position(self, pos):
         if pos == "UP" and self.settings['player_position']['y'] > 0:

@@ -5,8 +5,41 @@
   <link rel="styleSheet" type="text/css" href="{% static 'options/style.css' %}" />
 {% endblock %}
 
+{% block A %}
+  {% if ready %}
+    <a class="fill-div" href="/worldmap"></a>
+  {% else %}
+    <a class="fill-div" href="/options/load_game?slot={{slot_current}}&load={{slot_current}}"></a>
+  {% endif %}
+{% endblock %}
+
+{% block B %}
+  <a class="fill-div" href="/options"></a>
+{% endblock %}
+
+{% block up %}
+  <a class="fill-div" href="/options/load_game?slot={{slot_up}}"></a>
+{% endblock %}
+
+{% block down %}
+  <a class="fill-div" href="/options/load_game?slot={{slot_down}}"></a>
+{% endblock %}
+
+
+
 {% block content %}
-  <p>
-    options / load
-  </p>
+  <div>
+    <h2>Charger une partie</h2>
+    <ul>
+      {% for slot, score in saved.items %}
+        <li>
+          {% if slot_current == slot %}->{% endif %} Slot {{slot|upper}} : {{score}}
+        </li>
+      {% endfor %}
+    </ul>
+    <ol>
+      <li>{% if ready %}Start game{% else %}Load{% endif %}</li>
+      <li>Cancel</li>
+    </ol>
+  </div>
 {% endblock %}
