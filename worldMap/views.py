@@ -7,6 +7,7 @@ from r00.Data import Data
 def index(request):
     move = request.GET.get('move', '')
     new = request.GET.get('new', '')
+    flee = request.GET.get('flee', '')
     data = Data().load()
     if move:
         data.set_position(move.upper())
@@ -22,7 +23,7 @@ def index(request):
         'movieballs': settings['player_movie_balls_count'],
     }
     movie_present = data.is_filled_by_movie(settings['player_position'])
-    if movie_present is None:
+    if movie_present is None or flee == 'True':
         return render(request, 'worldMap/index.html', context)
     else:
         return redirect('/battle/' + str(movie_present['id']))

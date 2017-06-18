@@ -29,6 +29,7 @@ def index(request, moviemon_id):
         data.add_strenght(1)
         msg = "Congrat ! you catched {} !He has been added to your Movidex".format(movie['name'])
         catched = "True"
+        data.remove_from_moviemon(movie['name'])
     else:
         msg = "You missed !"
         catched = "False"
