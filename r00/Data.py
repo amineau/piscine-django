@@ -62,6 +62,13 @@ class Data:
 
     def get_movie_by_id(self, id):
         return self.settings['movie_mons'][settings.MOVIES[id]]
+    
+    def get_movieBalls_count(self):
+        return self.settings['player_movie_balls_count']
+
+    def add_movieBall(self):
+        self.settings['player_movie_balls_count'] += 1
+        self.save()
 
     def set_position(self, pos):
         if pos == "UP" and self.settings['player_position']['y'] > 0:
