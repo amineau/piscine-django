@@ -57,6 +57,10 @@ class Data:
     def get_strength(self):
         return self.settings["player_strength"]
 
+    def add_strenght(self):
+        self.settings["player_strength"] += 1
+        self.save()
+
     def get_movie(self, key):
         return self.settings['movie_mons'][key]
 
