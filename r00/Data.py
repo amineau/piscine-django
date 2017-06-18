@@ -78,8 +78,8 @@ class Data:
     def get_movieBalls_count(self):
         return self.settings['player_movie_balls_count']
 
-    def add_movieBall(self):
-        self.settings['player_movie_balls_count'] += 1
+    def set_movieBall(self, nb):
+        self.settings['player_movie_balls_count'] += nb
         self.save()
 
     def set_position(self, pos):
