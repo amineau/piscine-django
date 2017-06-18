@@ -1,0 +1,29 @@
+body, html {
+  /*width: 100%;*/
+  height:100vh;
+}
+
+#worldMap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.line {
+  display: flex;
+  flex: 1;
+}
+
+.case {
+  flex: 1;
+  border: 1px solid grey;
+}
+
+/* A migrer vers templates/media/base.css */
+
+.button {
+  width: 100%;
+  height: 100%;
+}
