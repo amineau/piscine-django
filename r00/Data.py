@@ -7,8 +7,8 @@ from django.conf import settings
 class Data:
     singleton = None
     settings = {
-        "grid": [0, 0],
-        "player_position": [0, 0],
+        "grid": {'x': 0, 'y': 0},
+        "player_position": {'x': 0, 'y': 0},
         "player_movie_balls_count": 0,
         "player_strength": 0,
         "movie_dex": [],
@@ -55,14 +55,14 @@ class Data:
         return self.settings['movie_mons'][key]
 
     def set_position(self, pos):
-        if pos == "UP" and self.settings['player_position'][1] > 0:
-            self.settings['player_position'][1] -= 1
-        elif pos == "DOWN" and self.settings['player_position'][1] < self.settings['grid'][1]:
-            self.settings['player_position'][1] += 1
-        elif pos == "LEFT" and self.settings['player_position'][0] > 0:
-            self.settings['player_position'][0] -= 1
-        elif pos == "RIGHT" and self.settings['player_position'][0] < self.settings['grid'][0]:
-            self.settings['player_position'][0] += 1
+        if pos == "UP" and self.settings['player_position']['y'] > 0:
+            self.settings['player_position']['y'] -= 1
+        elif pos == "DOWN" and self.settings['player_position']['y'] < self.settings['grid']['y']:
+            self.settings['player_position']['y'] += 1
+        elif pos == "LEFT" and self.settings['player_position']['x'] > 0:
+            self.settings['player_position']['x'] -= 1
+        elif pos == "RIGHT" and self.settings['player_position']['x'] < self.settings['grid']['x']:
+            self.settings['player_position']['x'] += 1
         else:
             raise Exception("invalid move command")
         self.save()
