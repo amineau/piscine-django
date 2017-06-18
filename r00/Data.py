@@ -10,7 +10,7 @@ class Data:
     settings = {
         "grid": {'x': 0, 'y': 0},
         "player_position": {'x': 0, 'y': 0},
-        "player_movie_balls_count": 0,
+        "player_movie_balls_count": 10,
         "player_strength": 0,
         "movie_dex": [],
         "movie_mons": {}
