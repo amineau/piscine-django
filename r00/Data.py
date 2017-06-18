@@ -15,7 +15,7 @@ class Data:
         "player_position": {'x': 0, 'y': 0},
         "player_movie_balls_count": 10,
         "player_strength": 0,
-        "movie_dex": ['Fight_Club', '300_(film)'],
+        "movie_dex": [],
         "movie_mons": {}
     }
 
