@@ -14,11 +14,11 @@ import os
 
 # Play settings
 GRID = {
-    'x': 10,
-    'y': 10,
+    'x': 20,
+    'y': 20,
 }
 BEGIN = {
-    'x': 0,
+    'x': 9,
     'y': 0,
 }
 MOVIES = {

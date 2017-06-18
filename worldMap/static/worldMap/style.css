@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  background-image: url('map.jpg');
+  background-size: cover;
 }
 
 .line {
@@ -35,4 +37,5 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: rgba(0, 255, 0, 0.5);
 }
