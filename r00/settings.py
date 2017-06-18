@@ -13,8 +13,14 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 
 # Play settings
-GRID = [10, 10]
-BEGIN = [0, 0]
+GRID = {
+    'x': 10,
+    'y': 10,
+}
+BEGIN = {
+    'x': 0,
+    'y': 0,
+}
 MOVIES = []
 
 
