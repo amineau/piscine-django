@@ -7,32 +7,32 @@
 
 {% block A %}
   {% if moviemon_id %}
-    <a class="button" href="{% url 'battle' moviemon_id %}"></a>
+    <a class="fill-div" href="{% url 'battle' moviemon_id %}"></a>
   {% endif %}
 {% endblock %}
 
 {% block up %}
-  <a class="button" href="/worldMap?move=up"></a>
+  <a class="fill-div" href="/worldmap?move=up" title="up"></a>
 {% endblock %}
 
 {% block down %}
-  <a class="button" href="/worldMap?move=down"></a>
+  <a class="fill-div" href="/worldmap?move=down" title="down"></a>
 {% endblock %}
 
 {% block right %}
-  <a class="button" href="/worldMap?move=right"></a>
+  <a class="fill-div" href="/worldmap?move=right" title="right"></a>
 {% endblock %}
 
 {% block left %}
-  <a class="button" href="/worldMap?move=left"></a>
+  <a class="fill-div" href="/worldmap?move=left" title="left"></a>
 {% endblock %}
 
 {% block start %}
-  <a class="button" href="/options"></a>
+  <a class="fill-div" href="/options"></a>
 {% endblock %}
 
 {% block select %}
-  <a class="button" href="/moviedex"></a>
+  <a class="fill-div" href="/moviedex"></a>
 {% endblock %}
 
 {% block content %}
@@ -44,19 +44,21 @@
         {% endfor %}
       </div>
     {% endfor %}
-    <div>
-      Movieballs : {{movieballs}}
+    <div class="info">
+      <div>
+        Movieballs : {{movieballs}}
+      </div>
+      {% if find_movieball %}
+        <div class="new_movieball">
+          Vous avez trouvé une movieball !
+        </div>
+      {% endif %}
+      {% if find_moviemon %}
+        <div class="new_moviemon">
+          Vous avez debusqué un moviemon !
+          Appuyer sur A pour essayer de le capturer
+        </div>
+      {% endif %}
     </div>
-    {% if find_movieball %}
-      <div>
-        Vous avez trouvé une movieball !
-      </div>
-    {% endif %}
-    {% if find_moviemon %}
-      <div>
-        Vous avez debusqué un moviemon !
-        Appuyer sur A pour essayer de le capturer
-      </div>
-    {% endif %}
   </div>
 {% endblock %}
