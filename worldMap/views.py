@@ -7,6 +7,8 @@ def index(request):
     move = request.GET.get('move', '')
     new = request.GET.get('new', '')
     data = Data().load()
+    if move:
+        data.set_position(move.upper())
     if new == 'true':
         data.load_default_settings()
     settings = data.dump()
@@ -18,5 +20,4 @@ def index(request):
         'player_position': settings['player_position'],
         'movieballs': settings['player_movie_balls_count'],
     }
-    print()
     return render(request, 'worldMap/index.html', context)

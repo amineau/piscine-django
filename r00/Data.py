@@ -75,16 +75,16 @@ class Data:
         self.save()
 
     def set_position(self, pos):
-        if pos == "UP" and self.settings['player_position']['y'] > 0:
-            self.settings['player_position']['y'] -= 1
-        elif pos == "DOWN" and self.settings['player_position']['y'] < self.settings['grid']['y']:
-            self.settings['player_position']['y'] += 1
-        elif pos == "LEFT" and self.settings['player_position']['x'] > 0:
+        print(self.settings['player_position'])
+        if pos == "UP" and self.settings['player_position']['x'] > 0:
             self.settings['player_position']['x'] -= 1
-        elif pos == "RIGHT" and self.settings['player_position']['x'] < self.settings['grid']['x']:
+        elif pos == "DOWN" and self.settings['player_position']['x'] < self.settings['grid']['x'] - 1:
             self.settings['player_position']['x'] += 1
-        else:
-            raise Exception("invalid move command")
+        elif pos == "LEFT" and self.settings['player_position']['y'] > 0:
+            self.settings['player_position']['y'] -= 1
+        elif pos == "RIGHT" and self.settings['player_position']['y'] < self.settings['grid']['y'] - 1:
+            self.settings['player_position']['y'] += 1
+        print(self.settings['player_position'])
         self.save()
 
     def add_movie_to_movie_dex(self, name):
