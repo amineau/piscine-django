@@ -23,32 +23,32 @@ BEGIN = {
 }
 MOVIES = {
     0: 'Fight_Club',
-    1: 'The_Exorcist_(film)',
+    1: 'The_Exorcist',
     2: 'Pulp_Fiction',
-    3: 'A_Clockwork_Orange_(film)',
+    3: 'A_Clockwork_Orange',
     4: 'Reservoir_Dogs',
-    5: 'Scarface_(1983_film)',
-    6: 'Snatch_(film)',
-    7: 'Trainspotting_(film)',
+    5: 'Scarface_',
+    6: 'Snatch',
+    7: 'Trainspotting',
     8: 'Shaun_of_the_Dead',
     9: 'French_Fried_Vacation',
-    10: '300_(film)',
-    11: 'Godzilla_(2014_film)'
+    10: '300',
+    11: 'Godzilla'
 }
 
 FULL_MOVIE = {
-    'Fight_Club'                : {'box_office': 100.9, 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2004, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/1/10/Godzilla_%282014%29_poster.jpg'},
-    'The_Exorcist_(film)'       : {'box_office': 12   , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2005, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/1/10/Godzilla_%282014%29_poster.jpg'},
-    'Pulp_Fiction'              : {'box_office': 213.9, 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2006, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/1/10/Godzilla_%282014%29_poster.jpg'},
-    'A_Clockwork_Orange_(film)' : {'box_office': 26.6 , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2007, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/1/10/Godzilla_%282014%29_poster.jpg'},
-    'Reservoir_Dogs'            : {'box_office': 2.8  , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2008, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/1/10/Godzilla_%282014%29_poster.jpg'},
-    'Scarface_(1983_film)'      : {'box_office': 65.9 , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2009, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/1/10/Godzilla_%282014%29_poster.jpg'},
-    'Snatch_(film)'             : {'box_office': 83.6 , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2010, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/1/10/Godzilla_%282014%29_poster.jpg'},
-    'Trainspotting_(film)'      : {'box_office': 72   , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2011, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/1/10/Godzilla_%282014%29_poster.jpg'},
-    'Shaun_of_the_Dead'         : {'box_office': 30   , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2012, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/1/10/Godzilla_%282014%29_poster.jpg'},
-    'French_Fried_Vacation'     : {'box_office': 17.3 , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2013, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/1/10/Godzilla_%282014%29_poster.jpg'},
-    '300_(film)'                : {'box_office': 456  , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2014, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/1/10/Godzilla_%282014%29_poster.jpg'},
-    'Godzilla_(2014_film)'      : {'box_office': 529.1, 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2015, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/1/10/Godzilla_%282014%29_poster.jpg'}
+    'Fight_Club'                : {'box_office': 100.9, 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2004, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Fight_Club.jpg/220px-Fight_Club.jpg'},
+    'The_Exorcist_'             : {'box_office': 12   , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2005, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'http://static.tvtropes.org/pmwiki/pub/images/theexorcist1973.jpg'},
+    'Pulp_Fiction'              : {'box_office': 213.9, 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2006, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg'},
+    'A_Clockwork_Orange'        : {'box_office': 26.6 , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2007, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/thumb/4/48/Clockwork_orangeA.jpg/220px-Clockwork_orangeA.jpg'},
+    'Reservoir_Dogs'            : {'box_office': 2.8  , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2008, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Reservoir_dogs_ver1.jpg/220px-Reservoir_dogs_ver1.jpg'},
+    'Scarface'                  : {'box_office': 65.9 , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2009, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/thumb/7/71/Scarface_-_1983_film.jpg/220px-Scarface_-_1983_film.jpg'},
+    'Snatch'                    : {'box_office': 83.6 , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2010, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Snatch_ver4.jpg/220px-Snatch_ver4.jpg'},
+    'Trainspotting'             : {'box_office': 72   , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2011, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/thumb/7/71/Trainspotting_ver2.jpg/250px-Trainspotting_ver2.jpg'},
+    'Shaun_of_the_Dead'         : {'box_office': 30   , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2012, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/Shaun-of-the-dead.jpg/220px-Shaun-of-the-dead.jpg'},
+    'French_Fried_Vacation'     : {'box_office': 17.3 , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2013, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Les_bronzes.jpg/220px-Les_bronzes.jpg'},
+    '300'                       : {'box_office': 456  , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2014, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/300poster.jpg/220px-300poster.jpg'},
+    'Godzilla'                  : {'box_office': 529.1, 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2015, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/1/10/Godzilla_%282014%29_poster.jpg'}
 }
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
