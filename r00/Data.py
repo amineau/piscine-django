@@ -53,3 +53,16 @@ class Data:
 
     def get_movie(self, key):
         return self.settings['movie_mons'][key]
+
+    def set_position(self, pos):
+        if pos == "UP" and self.settings['player_position'][1] > 0:
+            self.settings['player_position'][1] -= 1
+        elif pos == "DOWN" and self.settings['player_position'][1] < self.settings['grid'][1]:
+            self.settings['player_position'][1] += 1
+        elif pos == "LEFT" and self.settings['player_position'][0] > 0:
+            self.settings['player_position'][0] -= 1
+        elif pos == "RIGHT" and self.settings['player_position'][0] < self.settings['grid'][0]:
+            self.settings['player_position'][0] += 1
+        else:
+            raise Exception("invalid move command")
+        self.save()
