@@ -4,6 +4,7 @@ import os
 import shutil
 import fnmatch
 
+import sys
 from django.conf import settings
 
 
@@ -41,7 +42,16 @@ class Data:
         for k, v in movie_list.items():
             self.settings['movie_mons'][v] = self.get_full_movie(v)
             self.settings['movie_mons'][v]['id'] = k
-        print(self.settings)
+            self.settings['movie_mons'][v]['name'] = v
+        play_grid = {(0,0): None}
+        for i in range (0, int(settings.GRID['x'])):
+            for j in range(0, int(settings.GRID['y'])):
+                play_grid[(i,j)] = ({'x': i, 'y': j})
+        for i in self.settings['movie_mons']:
+            coord = random.choice(play_grid.items())
+            play_grid[(coord[1]['x'],coord[1]['y'])]['movie'] = i
+        self.settings['max_score'] = len(settings.MOVIES)
+        self.settings['play_grid'] = play_grid
         return self.save()
 
     def save(self):
@@ -96,6 +106,10 @@ class Data:
     def get_strength(self):
         return self.settings["player_strength"]
 
+    def add_strenght(self, strenght):
+        self.settings["player_strength"] += strenght
+        self.save()
+
     def get_movie(self, key):
         return self.settings['movie_mons'][key]
 
@@ -103,20 +117,46 @@ class Data:
         return len(self.settings['movie_dex'])
 
     def get_max_score(self):
-        return len(self.settings['movie_mons'])
+        return len(self.settings['max_score'])
+
+    def get_movie_by_id(self, id):
+        return self.settings['movie_mons'][settings.MOVIES[id]]
+    
+    def get_movieBalls_count(self):
+        return self.settings['player_movie_balls_count']
+
+    def set_movieBall(self, nb):
+        self.settings['player_movie_balls_count'] += nb
+        self.save()
 
     def set_position(self, pos):
-        if pos == "UP" and self.settings['player_position']['y'] > 0:
-            self.settings['player_position']['y'] -= 1
-        elif pos == "DOWN" and self.settings['player_position']['y'] < self.settings['grid']['y']:
-            self.settings['player_position']['y'] += 1
-        elif pos == "LEFT" and self.settings['player_position']['x'] > 0:
+        print(self.settings['player_position'])
+        if pos == "UP" and self.settings['player_position']['x'] > 0:
             self.settings['player_position']['x'] -= 1
-        elif pos == "RIGHT" and self.settings['player_position']['x'] < self.settings['grid']['x']:
+        elif pos == "DOWN" and self.settings['player_position']['x'] < self.settings['grid']['x'] - 1:
             self.settings['player_position']['x'] += 1
-        else:
-            raise Exception("invalid move command")
+        elif pos == "LEFT" and self.settings['player_position']['y'] > 0:
+            self.settings['player_position']['y'] -= 1
+        elif pos == "RIGHT" and self.settings['player_position']['y'] < self.settings['grid']['y'] - 1:
+            self.settings['player_position']['y'] += 1
+        print(self.settings['player_position'])
         self.save()
+
+    def add_movie_to_movie_dex(self, name):
+        self.settings['movie_dex'].append(name)
+        self.save()
+
+    def add_movie_to_movie_dex_by_id(self, movie_id):
+        self.settings['movie_dex'].append(self.settings['movie_mon'][settings.MOVIES[movie_id]]['name'])
+        self.save()
+
+    def is_filled_by_movie(self, req):
+        try:
+            t = self.settings['movie_mons'][self.settings['play_grid'][(req['x'], req['y'])]['movie']]
+            print(t)
+            return t
+        except KeyError:
+            return None
 
     # change this method for scrapping
     @staticmethod

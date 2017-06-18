@@ -1,0 +1,44 @@
+.movie-section{
+  	width: 100%;
+  	height:40%;
+}
+
+.player-section{
+	width: 100%;
+	height:40%;
+}
+
+.info-section{
+	width: 100%;
+	height:20%;
+	font-size: 20px;
+}
+
+.mvi{
+	position:relative;
+	width: 30%;
+	height:100%;
+	left:600px
+}
+
+.pli{
+	position:relative;
+	width: 30%;
+	height:100%;
+	left: 100px;
+}
+
+.info-movie{
+	position: absolute;
+	font-size: 30px;
+	width: 30%;
+	height:40%;
+}
+
+.info-player{
+	position: absolute;
+	font-size: 30px;
+	width: 30%;
+	height:40%;
+	left : 400px;
+}

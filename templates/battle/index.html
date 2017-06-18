@@ -2,11 +2,47 @@
 
 {% load staticfiles %}
 {% block style %}
-  <link rel="styleSheet" type="text/css" href="{% static 'base/style.css' %}" />
+  <link rel="styleSheet" type="text/css" href="{% static 'battle/style.css' %}" />
 {% endblock %}
 
-{% block content %}
-  <p>
-    battle with {{moviemon_id}}
-  </p>
+{% block A %}
+  <a class="fill-div" href="/battle/{{Movie.id}}?attack=True" title="Attack"></a>
 {% endblock %}
+
+{% block B %}
+  <a class="fill-div" href="/worldmap?flee=True" title="Back"></a>
+{% endblock %}
+
+
+{% block content %}
+<div class="movie-section">
+
+  <div class="info-movie">
+    <ul>
+      <li>Name : {{Movie.name}}</li>
+      <li>Strenght : {{Movie.box_office}}</li>
+    </ul>
+  </div>
+  <div class=mvi>
+    <img src = {{Movie.poster}} height="100%" width="auto">
+  </div>
+</div>
+
+<div class="info-section">
+{{info}}
+</div>
+<div class="player-section">
+  <div class="info-player">
+    <ul>
+      <li>MovieBalls : {{balls}}</li>
+      <li>Strenght : {{strenght}}</li>
+      <li>Succes rate : {{rate}}</li>
+    </ul>
+  </div>
+  <div class= "pli">
+    <img src = "https://www.pixenli.com/images/1256/1256845328084831400.png" height="100%" width="auto">
+  </div>
+</div>
+
+{% endblock %}
+
