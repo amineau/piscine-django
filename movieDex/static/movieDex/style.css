@@ -12,3 +12,9 @@ div#movie_dex img{
 div#movie_dex img.selected{
     border: 5px solid green;
 }
+
+#detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
