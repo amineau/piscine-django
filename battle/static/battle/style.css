@@ -27,8 +27,17 @@
 	left: 100px;
 }
 
-.info{
+.info-movie{
 	position: absolute;
+	font-size: 30px;
 	width: 30%;
-	height:100%;
+	height:40%;
+}
+
+.info-player{
+	position: absolute;
+	font-size: 30px;
+	width: 30%;
+	height:40%;
+	left : 400px;
 }
