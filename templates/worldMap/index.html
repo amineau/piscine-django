@@ -37,10 +37,14 @@
 
 {% block content %}
   <div id='worldMap'>
-    {% for i in lines %}
+    {% for i in grid.x %}
       <div class="line">
-        {% for j in columns %}
-          <div class="case"></div>
+        {% for j in grid.y %}
+          {% if i == player_position.x and j == player_position.y %}
+            <div id="player_position" class="case"></div>
+          {% else %}
+            <div class="case"></div>
+          {% endif %}
         {% endfor %}
       </div>
     {% endfor %}

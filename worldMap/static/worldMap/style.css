@@ -34,3 +34,10 @@ body, html {
 .new_movieball {
   color: green;
 }
+
+#player_position {
+  background-image: url('player.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
