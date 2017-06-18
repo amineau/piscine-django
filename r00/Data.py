@@ -38,6 +38,7 @@ class Data:
         for k, v in movie_list.items():
             self.settings['movie_mons'][v] = self.get_full_movie(v)
             self.settings['movie_mons'][v]['id'] = k
+            self.settings['movie_mons'][v]['name'] = v
         print(self.settings)
         return self.save()
 
