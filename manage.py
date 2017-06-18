@@ -2,6 +2,8 @@
 import os
 import sys
 
+from r00.Data import Data
+
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "r00.settings")
     try:
@@ -19,4 +21,6 @@ if __name__ == "__main__":
                 "forget to activate a virtual environment?"
             )
         raise
+    data = Data().load_default_settings()
+    print(data)
     execute_from_command_line(sys.argv)
