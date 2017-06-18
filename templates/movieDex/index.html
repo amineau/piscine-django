@@ -5,8 +5,37 @@
   <link rel="styleSheet" type="text/css" href="{% static 'movieDex/style.css' %}" />
 {% endblock %}
 
+{% block right %}
+  <a class="fill-div" href="/moviedex?move=right&selected={{select.id}}"></a>
+{% endblock %}
+
+{% block left %}
+  <a class="fill-div" href="/moviedex?move=left&selected={{select.id}}"></a>
+{% endblock %}
+
+{% block A %}
+  <a class="fill-div" href="/moviedex/{{select.name}}"></a>
+{% endblock %}
+
+{% block select %}
+  <a class="fill-div" href="/worldmap"></a>
+{% endblock %}
+
 {% block content %}
-  <p>
-    movieDex
-  </p>
+  <div>
+    <h2>MovieDex</h2>
+    <div id="movie_dex">
+      {% for poster in posters %}
+        {% if poster.id == select.id %}
+          <img class="selected" src="{{poster.src}}"  />
+        {% else %}
+          <img src="{{poster.src}}"  />
+        {% endif %}
+      {% endfor %}
+    </div>
+    <ol>
+      <li>A - More information</li>
+      <li>select - Back</li>
+    </ol>
+  </div>
 {% endblock %}

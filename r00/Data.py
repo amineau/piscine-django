@@ -15,7 +15,7 @@ class Data:
         "player_position": {'x': 0, 'y': 0},
         "player_movie_balls_count": 10,
         "player_strength": 0,
-        "movie_dex": [],
+        "movie_dex": ['Fight_Club','Fight_Club','Fight_Club','Fight_Club','Fight_Club','Fight_Club','Fight_Club','Fight_Club','Fight_Club'],
         "movie_mons": {}
     }
 
@@ -128,6 +128,9 @@ class Data:
     def set_movieBall(self, nb):
         self.settings['player_movie_balls_count'] += nb
         self.save()
+
+    def get_moviedex(self):
+        return self.settings['movie_dex']
 
     def set_position(self, pos):
         print(self.settings['player_position'])

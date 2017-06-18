@@ -92,7 +92,7 @@ a.fill-div {
 /* LIST UL-OL */
 
 ol li {
-  list-style-type: upper-latin;
+  list-style-type: none;
 }
 
 ul li {
