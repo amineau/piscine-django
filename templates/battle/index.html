@@ -6,11 +6,17 @@
 {% endblock %}
 
 {% block A %}
+{% if catched == "True"%}
+  <a class="fill-div" href="/worldmap" title="Back to woldmap"></a>
+{% endif %}
   <a class="fill-div" href="/battle/{{Movie.id}}?attack=True" title="Attack"></a>
 {% endblock %}
 
 {% block B %}
-  <a class="fill-div" href="/worldmap?flee=True" title="Back"></a>
+{% if catched == "True"%}
+  <a class="fill-div" href="/worldmap" title="Back to woldmap"></a>
+{% endif %}
+  <a class="fill-div" href="/worldmap?flee=True" title="Back to woldmap"></a>
 {% endblock %}
 
 
@@ -30,6 +36,12 @@
 
 <div class="info-section">
 {{info}}
+<div class=info-commands>
+   <ul>
+      <li>A: Throw a movieball</li>
+      <li>B: Back to worldmap</li>
+    </ul>
+</div>
 </div>
 <div class="player-section">
   <div class="info-player">
