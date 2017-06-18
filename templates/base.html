@@ -4,13 +4,48 @@
   <head>
     {% load staticfiles %}
     <meta charset="utf-8" />
-    <link rel="styleSheet" type="text/css" href="{% static 'base.css' %}" />
+    <link rel="styleSheet" type="text/css" href="{% static 'base.css' %}"/>
     {% block style %}
     {% endblock %}
   </head>
   <body>
-    {{STATIC_URL}}
-    {% block content %}
-    {% endblock %}
+    <div class="gba-image">
+      <div class="up">
+        {% block up %}
+        {% endblock %}
+      </div>
+      <div class="left">
+        {% block left %}
+        {% endblock %}
+      </div>
+      <div class="right">
+        {% block right %}
+        {% endblock %}
+      </div>
+      <div class="down">
+        {% block down %}
+        {% endblock %}
+      </div>
+       <div class="start">
+        {% block start %}
+        {% endblock %}
+      </div>
+       <div class="select">
+        {% block select %}
+        {% endblock %}
+      </div>
+       <div class="A">
+        {% block A %}
+        {% endblock %}
+      </div>
+       <div class="B">
+        {% block B %}
+        {% endblock %}
+      </div>
+      <div class="screen">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
   </body>
 </html>
