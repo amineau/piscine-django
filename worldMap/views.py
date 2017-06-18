@@ -23,6 +23,8 @@ def index(request):
         'movieballs': settings['player_movie_balls_count'],
     }
     movie_present = data.is_filled_by_movie(settings['player_position'])
+    if data.is_filled_by_pokeball(settings['player_position']):
+        data.set_movieBall(1)
     if movie_present is None or flee == 'True':
         return render(request, 'worldMap/index.html', context)
     else:
