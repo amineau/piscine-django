@@ -5,6 +5,15 @@
   <link rel="styleSheet" type="text/css" href="{% static 'battle/style.css' %}" />
 {% endblock %}
 
+{% block A %}
+  <a class="fill-div" href="/battle/{{Movie.id}}?attack=True" title="Attack"></a>
+{% endblock %}
+
+{% block B %}
+  <a class="fill-div" href="/worldmap" title="Back"></a>
+{% endblock %}
+
+
 {% block content %}
 <div class="movie-section">
 
@@ -20,8 +29,8 @@
 </div>
 
 <div class="info-section">
+{{info}}
 </div>
-
 <div class="player-section">
   <div class="info-player">
     <ul>
@@ -31,8 +40,9 @@
     </ul>
   </div>
   <div class= "pli">
-    <img src = "http://www.42.fr/wp-content/themes/42/images/42_logo_black.svg" height="100%" width="auto">
+    <img src = "https://www.pixenli.com/images/1256/1256845328084831400.png" height="100%" width="auto">
   </div>
 </div>
 
 {% endblock %}
+
