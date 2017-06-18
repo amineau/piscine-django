@@ -5,8 +5,32 @@
   <link rel="styleSheet" type="text/css" href="{% static 'movieDex/style.css' %}" />
 {% endblock %}
 
+{% block B %}
+  <a class="fill-div" href="/moviedex"></a>
+{% endblock %}
+
 {% block content %}
-  <p>
-    movieDex with {{moviemon_id}}
-  </p>
+  <div>
+    <h2>{{name}}</h2>
+    <img src="{{movie.poster}}" />
+    <div>
+      Director : {{movie.directed_by}}
+    </div>
+    <div>
+      Year : {{movie.year}}
+    </div>
+    <div>
+      Rating: {{movie.box_office}}
+    </div>
+    <div>
+      Synopsis : {{movie.synopsis}}
+    </div>
+    <div>
+      Acteur : {{movie.actors}}
+    </div>
+  </div>
+  <ol>
+    <li>B - Back</li>
+  </ol>
+
 {% endblock %}
