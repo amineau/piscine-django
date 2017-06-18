@@ -3,3 +3,6 @@ migrations
 *.pyc
 *.sqlite*
 *.log
+.idea
+
+save.p
