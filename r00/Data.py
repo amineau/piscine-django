@@ -1,6 +1,7 @@
 import pickle
 import random
 
+import sys
 from django.conf import settings
 
 
@@ -39,7 +40,14 @@ class Data:
             self.settings['movie_mons'][v] = self.get_full_movie(v)
             self.settings['movie_mons'][v]['id'] = k
             self.settings['movie_mons'][v]['name'] = v
-        print(self.settings)
+        play_grid = {(0,0): None}
+        for i in range (0, int(settings.GRID['x'])):
+            for j in range(0, int(settings.GRID['y'])):
+                play_grid[(i,j)] = ({'x': i, 'y': j})
+        for i in self.settings['movie_mons']:
+            coord = random.choice(play_grid.items())
+            play_grid[(coord[1]['x'],coord[1]['y'])]['movie'] = i
+        self.settings['play_grid'] = play_grid
         return self.save()
 
     def save(self):
@@ -94,6 +102,14 @@ class Data:
     def add_movie_to_movie_dex_by_id(self, movie_id):
         self.settings['movie_dex'].append(self.settings['movie_mon'][settings.MOVIES[movie_id]]['name'])
         self.save()
+
+    def is_filled_by_movie(self, req):
+        try:
+            t = self.settings['movie_mons'][self.settings['play_grid'][(req['x'], req['y'])]['movie']]
+            print(t)
+            return t
+        except KeyError:
+            return None
 
     # change this method for scrapping
     @staticmethod

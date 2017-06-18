@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.conf import settings
+from django.urls import reverse
+
 from r00.Data import Data
 
 # Create your views here.
@@ -20,4 +22,8 @@ def index(request):
         'player_position': settings['player_position'],
         'movieballs': settings['player_movie_balls_count'],
     }
-    return render(request, 'worldMap/index.html', context)
+    movie_present = data.is_filled_by_movie(settings['player_position'])
+    if movie_present is None:
+        return render(request, 'worldMap/index.html', context)
+    else:
+        return redirect('/battle/' + str(movie_present['id']))
