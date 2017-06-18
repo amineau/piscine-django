@@ -15,7 +15,7 @@ class Data:
         "player_position": {'x': 0, 'y': 0},
         "player_movie_balls_count": 10,
         "player_strength": 0,
-        "movie_dex": ['Fight_Club', '300_(film)'],
+        "movie_dex": [],
         "movie_mons": {}
     }
 
@@ -121,7 +121,7 @@ class Data:
         return len(self.settings['movie_dex'])
 
     def get_max_score(self):
-        return len(self.settings['max_score'])
+        return self.settings['max_score']
 
     def get_movie_by_id(self, id):
         return self.settings['movie_mons'][settings.MOVIES[id]]
