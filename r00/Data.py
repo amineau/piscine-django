@@ -59,6 +59,9 @@ class Data:
     def get_movie(self, key):
         return self.settings['movie_mons'][key]
 
+    def get_movie_by_id(self, id):
+        return self.settings['movie_mons'][settings.MOVIES[id]]
+
     def set_position(self, pos):
         if pos == "UP" and self.settings['player_position']['y'] > 0:
             self.settings['player_position']['y'] -= 1
