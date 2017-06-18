@@ -2,7 +2,7 @@
 
 {% load staticfiles %}
 {% block style %}
-  <link rel="styleSheet" type="text/css" href="{% static 'movieDex/style.css' %}" />
+  <link rel="styleSheet" type="text/css" href="{% static 'movieDex/style.css' %}"/>
 {% endblock %}
 
 {% block right %}
@@ -24,7 +24,7 @@
 {% block content %}
   <div>
     <h2>MovieDex</h2>
-    <div id="movie_dex">
+    <div class="movie_dex">
       {% for poster in posters %}
         {% if poster.id == select.id %}
           <img class="selected" src="{{poster.src}}"  />
