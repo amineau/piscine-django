@@ -45,14 +45,14 @@ class Data:
                 self.settings['movie_mons'][v]['id'] = k
                 self.settings['movie_mons'][v]['name'] = v
             else:
-                print(k,v)
-        play_grid = {(0,0): None}
-        for i in range (0, int(settings.GRID['x'])):
+                print(k, v)
+        play_grid = {(0, 0): None}
+        for i in range(0, int(settings.GRID['x'])):
             for j in range(0, int(settings.GRID['y'])):
-                play_grid[(i,j)] = ({'x': i, 'y': j})
+                play_grid[(i, j)] = ({'x': i, 'y': j})
         for i in self.settings['movie_mons']:
             coord = random.choice(play_grid.items())
-            play_grid[(coord[1]['x'],coord[1]['y'])]['movie'] = i
+            play_grid[(coord[1]['x'], coord[1]['y'])]['movie'] = i
         self.settings['max_score'] = len(settings.MOVIES)
         self.settings['play_grid'] = play_grid
         return self.save()
@@ -67,12 +67,12 @@ class Data:
                 os.mkdir('saved_game')
             else:
                 for file in os.listdir('saved_game'):
-                    if fnmatch.fnmatch(file, 'slot%s*'%(slot)):
+                    if fnmatch.fnmatch(file, 'slot%s*' % (slot)):
                         os.remove(os.path.join('saved_game', file))
         except Exception as e:
             print(e)
             return
-        filename = "slot%s_%d_%d.mmg"%(slot, self.get_score(), self.get_max_score())
+        filename = "slot%s_%d_%d.mmg" % (slot, self.get_score(), self.get_max_score())
         try:
             shutil.copyfile("save.p", os.path.join('saved_game', filename))
         except Exception as e:
@@ -81,7 +81,7 @@ class Data:
     def load_slot(self, slot):
         if os.path.exists('saved_game'):
             for file in os.listdir('saved_game'):
-                if fnmatch.fnmatch(file, 'slot%s*'%(slot)):
+                if fnmatch.fnmatch(file, 'slot%s*' % (slot)):
                     try:
                         shutil.copyfile(os.path.join('saved_game', file), "save.p")
                         return True
@@ -89,13 +89,12 @@ class Data:
                         print(e)
         return False
 
-
     def read_save(self):
         result = {}
         if os.path.exists('saved_game'):
             for file in os.listdir('saved_game'):
                 infos = file[4:-4].split('_')
-                result[infos[0]] = "%s / %s"%(infos[1], infos[2])
+                result[infos[0]] = "%s / %s" % (infos[1], infos[2])
         return result
 
     def dump(self):
@@ -124,7 +123,7 @@ class Data:
 
     def get_movie_by_id(self, id):
         return self.settings['movie_mons'][settings.MOVIES[id]]
-    
+
     def get_movieBalls_count(self):
         return self.settings['player_movie_balls_count']
 
@@ -160,6 +159,18 @@ class Data:
             return t
         except KeyError:
             return None
+
+    def remove_from_moviemon(self, key):
+        grid = self.settings['play_grid']
+        to_del = ()
+        for i in grid:
+            try:
+                if grid[i]['movie'] == key:
+                    to_del = i
+            except KeyError:
+                pass
+        self.settings['play_grid'][to_del].pop('movie')
+        self.save()
 
     # change this method for scrapping
     @staticmethod
