@@ -133,7 +133,6 @@ class Data:
         return self.settings['movie_dex']
 
     def set_position(self, pos):
-        print(self.settings['player_position'])
         if pos == "UP" and self.settings['player_position']['x'] > 0:
             self.settings['player_position']['x'] -= 1
         elif pos == "DOWN" and self.settings['player_position']['x'] < self.settings['grid']['x'] - 1:
@@ -142,7 +141,6 @@ class Data:
             self.settings['player_position']['y'] -= 1
         elif pos == "RIGHT" and self.settings['player_position']['y'] < self.settings['grid']['y'] - 1:
             self.settings['player_position']['y'] += 1
-        print(self.settings['player_position'])
         self.save()
 
     def add_movie_to_movie_dex(self, name):
@@ -156,7 +154,6 @@ class Data:
     def is_filled_by_movie(self, req):
         try:
             t = self.settings['movie_mons'][self.settings['play_grid'][(req['x'], req['y'])]['movie']]
-            print(t)
             return t
         except KeyError:
             return None
