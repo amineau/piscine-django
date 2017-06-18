@@ -21,20 +21,20 @@ BEGIN = {
     'x': 0,
     'y': 0,
 }
-MOVIES = [
-    'Fight_Club',
-    'The_Exorcist_(film)',
-    'Pulp_Fiction',
-    'A_Clockwork_Orange_(film)',
-    'Reservoir_Dogs',
-    'Scarface_(1983_film)',
-    'Snatch_(film)',
-    'Trainspotting_(film)',
-    'Shaun_of_the_Dead',
-    'French_Fried_Vacation',
-    '300_(film)',
-    'Godzilla_(2014_film)'
-]
+MOVIES = {
+    0: 'Fight_Club',
+    1: 'The_Exorcist_(film)',
+    2: 'Pulp_Fiction',
+    3: 'A_Clockwork_Orange_(film)',
+    4: 'Reservoir_Dogs',
+    5: 'Scarface_(1983_film)',
+    6: 'Snatch_(film)',
+    7: 'Trainspotting_(film)',
+    8: 'Shaun_of_the_Dead',
+    9: 'French_Fried_Vacation',
+    10: '300_(film)',
+    11: 'Godzilla_(2014_film)'
+}
 
 FULL_MOVIE = {
     'Fight_Club'                : {'box_office': 100.9, 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2004, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/1/10/Godzilla_%282014%29_poster.jpg'},
