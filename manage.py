@@ -22,5 +22,4 @@ if __name__ == "__main__":
             )
         raise
     data = Data().load_default_settings()
-    print(data)
     execute_from_command_line(sys.argv)
