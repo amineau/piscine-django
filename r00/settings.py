@@ -27,7 +27,7 @@ MOVIES = {
     2: 'Pulp_Fiction',
     3: 'A_Clockwork_Orange',
     4: 'Reservoir_Dogs',
-    5: 'Scarface_',
+    5: 'Scarface',
     6: 'Snatch',
     7: 'Trainspotting',
     8: 'Shaun_of_the_Dead',
@@ -38,7 +38,7 @@ MOVIES = {
 
 FULL_MOVIE = {
     'Fight_Club'                : {'box_office': 100.9, 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2004, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Fight_Club.jpg/220px-Fight_Club.jpg'},
-    'The_Exorcist_'             : {'box_office': 12   , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2005, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'http://static.tvtropes.org/pmwiki/pub/images/theexorcist1973.jpg'},
+    'The_Exorcist'              : {'box_office': 12   , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2005, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'http://static.tvtropes.org/pmwiki/pub/images/theexorcist1973.jpg'},
     'Pulp_Fiction'              : {'box_office': 213.9, 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2006, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg'},
     'A_Clockwork_Orange'        : {'box_office': 26.6 , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2007, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/thumb/4/48/Clockwork_orangeA.jpg/220px-Clockwork_orangeA.jpg'},
     'Reservoir_Dogs'            : {'box_office': 2.8  , 'synopsis': 'movie synopsis', 'directed_by': 'the director', 'year': 2008, 'actors': ['Actor A', 'Actor B', 'Actor C'], 'poster': 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Reservoir_dogs_ver1.jpg/220px-Reservoir_dogs_ver1.jpg'},

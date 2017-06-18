@@ -6,5 +6,4 @@ from r00.Data import Data
 
 def index(request):
     data = Data().load()
-    print(data)
     return render(request, 'titleScreen/index.html')

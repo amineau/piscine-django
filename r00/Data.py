@@ -40,9 +40,12 @@ class Data:
         # from the list of movies in the settings, load the movies in settings.movie_mons
         movie_list = settings.MOVIES
         for k, v in movie_list.items():
-            self.settings['movie_mons'][v] = self.get_full_movie(v)
-            self.settings['movie_mons'][v]['id'] = k
-            self.settings['movie_mons'][v]['name'] = v
+            if self.get_full_movie(v):
+                self.settings['movie_mons'][v] = self.get_full_movie(v)
+                self.settings['movie_mons'][v]['id'] = k
+                self.settings['movie_mons'][v]['name'] = v
+            else:
+                print(k,v)
         play_grid = {(0,0): None}
         for i in range (0, int(settings.GRID['x'])):
             for j in range(0, int(settings.GRID['y'])):
@@ -133,7 +136,6 @@ class Data:
         return self.settings['movie_dex']
 
     def set_position(self, pos):
-        print(self.settings['player_position'])
         if pos == "UP" and self.settings['player_position']['x'] > 0:
             self.settings['player_position']['x'] -= 1
         elif pos == "DOWN" and self.settings['player_position']['x'] < self.settings['grid']['x'] - 1:
@@ -142,7 +144,6 @@ class Data:
             self.settings['player_position']['y'] -= 1
         elif pos == "RIGHT" and self.settings['player_position']['y'] < self.settings['grid']['y'] - 1:
             self.settings['player_position']['y'] += 1
-        print(self.settings['player_position'])
         self.save()
 
     def add_movie_to_movie_dex(self, name):
@@ -156,7 +157,6 @@ class Data:
     def is_filled_by_movie(self, req):
         try:
             t = self.settings['movie_mons'][self.settings['play_grid'][(req['x'], req['y'])]['movie']]
-            print(t)
             return t
         except KeyError:
             return None
