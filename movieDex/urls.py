@@ -18,5 +18,5 @@ from .views import index, detail
 
 urlpatterns = [
     url(r'^$', index),
-    url(r'^(?P<moviemon_id>[0-9]+)/', detail),
+    url(r'^(?P<moviemon_id>\w{0,50})/', detail),
 ]

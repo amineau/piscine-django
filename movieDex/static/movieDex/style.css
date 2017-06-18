@@ -1,0 +1,14 @@
+div#movie_dex{
+  max-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: scroll;
+}
+div#movie_dex img{
+    border: 5px solid transparent;
+}
+
+div#movie_dex img.selected{
+    border: 5px solid green;
+}

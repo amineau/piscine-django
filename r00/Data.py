@@ -14,7 +14,7 @@ class Data:
         "player_position": {'x': 0, 'y': 0},
         "player_movie_balls_count": 0,
         "player_strength": 0,
-        "movie_dex": [],
+        "movie_dex": ['Fight_Club','Fight_Club','Fight_Club','Fight_Club','Fight_Club','Fight_Club','Fight_Club','Fight_Club','Fight_Club'],
         "movie_mons": {}
     }
 
@@ -104,6 +104,9 @@ class Data:
 
     def get_max_score(self):
         return len(self.settings['movie_mons'])
+
+    def get_moviedex(self):
+        return self.settings['movie_dex']
 
     def set_position(self, pos):
         if pos == "UP" and self.settings['player_position']['y'] > 0:
