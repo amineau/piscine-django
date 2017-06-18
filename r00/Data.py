@@ -1,15 +1,12 @@
 import pickle
-
-
-# Singleton pattern
-# http://ogcrazcalm.blogspot.fr/2015/09/singletons-in-python3.html
-import io
+from django.conf import settings
 
 
 class Data:
     singleton = None
     settings = {}
 
+    # the constructor follows the singleton pattern
     def __new__(cls, *args, **kwargs):
         if not cls.singleton:
             cls.singleton = object.__new__(Data)
@@ -19,24 +16,26 @@ class Data:
         pass
 
     def __str__(self):
-        return str(dict(pickle.load(open("save.p", "rb"))).get("settings"))
+        return str(dict(pickle.load(open("save.p", "rb"))))
 
     # load settings from backup file
     def load(self):
         self.settings = pickle.load(open("save.p", "rb"))
         return self
 
-    # load settings from settings.py file
+    # load settings from settings.py file (put the data of the settings file here)
+    # after loading data, the settings are saved in the backup file
     def load_default_settings(self):
-        pass
+        self.settings['grid'] = settings.GRID
+        return self.save()
 
     # save settings to backup file
     def save(self):
-        pickle.dump({"settings", self.settings}, open("save.p", "wb"))
-        return self
+        pickle.dump(self.settings, open("save.p", "wb"))
+        return self.settings
 
     def dump(self):
-        pass
+        return self.settings
 
     def get_random_movie(self):
         pass
@@ -46,15 +45,3 @@ class Data:
 
     def get_movie(self):
         pass
-
-
-def main():
-    # initial setup
-    d = Data().load_default_settings()
-    d.load()
-
-    # d.save()
-
-
-if __name__ == "__main__":
-    main()
