@@ -15,7 +15,6 @@
 
 .case {
   flex: 1;
-  border: 1px solid grey;
 }
 
 .info {
@@ -37,5 +36,4 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(0, 255, 0, 0.5);
 }
