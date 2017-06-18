@@ -40,9 +40,12 @@ class Data:
         # from the list of movies in the settings, load the movies in settings.movie_mons
         movie_list = settings.MOVIES
         for k, v in movie_list.items():
-            self.settings['movie_mons'][v] = self.get_full_movie(v)
-            self.settings['movie_mons'][v]['id'] = k
-            self.settings['movie_mons'][v]['name'] = v
+            if self.get_full_movie(v):
+                self.settings['movie_mons'][v] = self.get_full_movie(v)
+                self.settings['movie_mons'][v]['id'] = k
+                self.settings['movie_mons'][v]['name'] = v
+            else:
+                print(k,v)
         play_grid = {(0,0): None}
         for i in range (0, int(settings.GRID['x'])):
             for j in range(0, int(settings.GRID['y'])):
