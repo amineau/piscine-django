@@ -34,4 +34,10 @@ def index(request):
     return render(request, 'movieDex/index.html', context)
 
 def detail(request, moviemon_id):
-    return render(request, 'movieDex/detail.html', {'moviemon_id': moviemon_id})
+    data = Data().load()
+    movie = data.get_full_movie(moviemon_id)
+    if not movie:
+        return index(request)
+    tmp = str.join(', ', movie['actors'])
+    movie['actors'] = tmp
+    return render(request, 'movieDex/detail.html', {'movie': movie, 'name': moviemon_id})

@@ -14,7 +14,7 @@ class Data:
         "player_position": {'x': 0, 'y': 0},
         "player_movie_balls_count": 0,
         "player_strength": 0,
-        "movie_dex": ['Fight_Club','Fight_Club','Fight_Club','Fight_Club','Fight_Club','Fight_Club','Fight_Club','Fight_Club','Fight_Club'],
+        "movie_dex": ['Fight_Club', '300_(film)'],
         "movie_mons": {}
     }
 
@@ -124,4 +124,6 @@ class Data:
     # change this method for scrapping
     @staticmethod
     def get_full_movie(movie):
+        if not movie in settings.FULL_MOVIE:
+            return False
         return settings.FULL_MOVIE[movie]
