@@ -31,5 +31,8 @@ def save_game(request):
 
 def load_game(request):
     slot = request.GET.get('slot', 'a')
+    toLoad = request.GET.get('load', '')
     context = get_context(slot)
+    if toLoad != '' and Data().load().load_slot(toLoad):
+        context['ready'] = True
     return render(request, 'options/load_game.html', context)

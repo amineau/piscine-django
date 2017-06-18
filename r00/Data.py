@@ -63,6 +63,18 @@ class Data:
         except Exception as e:
             print(e)
 
+    def load_slot(self, slot):
+        if os.path.exists('saved_game'):
+            for file in os.listdir('saved_game'):
+                if fnmatch.fnmatch(file, 'slot%s*'%(slot)):
+                    try:
+                        shutil.copyfile(os.path.join('saved_game', filename), "save.p")
+                        return True
+                    except Exception as e:
+                        print(e)
+        return False
+
+
     def read_save(self):
         result = {}
         if os.path.exists('saved_game'):
