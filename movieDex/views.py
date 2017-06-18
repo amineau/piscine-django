@@ -8,10 +8,11 @@ def index(request):
     movie_dex = data.get_moviedex()
     move = request.GET.get('move', '')
     selected = int(request.GET.get('selected', 0))
-    if move == 'right':
-        selected = (selected + 1) % len(movie_dex)
-    elif move =='left':
-        selected = (selected - 1) % len(movie_dex)
+    if len(movie_dex):
+        if move == 'right':
+            selected = (selected + 1) % len(movie_dex)
+        elif move =='left':
+            selected = (selected - 1) % len(movie_dex)
     posters = []
     id = 0
     for movie in movie_dex:
